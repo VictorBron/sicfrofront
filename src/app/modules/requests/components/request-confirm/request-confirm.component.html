@@ -1,0 +1,128 @@
+<section fxFlex="100%" class="intra-main-body__form">
+  <label class="main-title">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.TITLE_STEP1' | translate }}</label>
+  <div fxFlex="100%" class="section-container">
+    <div class="section-content" fxLayout="row wrap">
+      <div class="section-title">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART1.VALIDITY_DATE' | translate }}</div>
+
+      <div class="form-container" fxLayout="row" fxFlex="100%">
+        <div fxFlex="50%" class="form-container" fxLayout="column">
+          <div class="form-input">
+            <div class="form-input__label">
+              {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_START' | translate }}
+            </div>
+            <div class="form-input__value">{{ getDate(formGroup.get('validityStart').value) }}</div>
+          </div>
+          <div class="form-input">
+            <div class="form-input__label">
+              {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_START_HOUR' | translate }}
+            </div>
+            <div class="form-input__value">{{ formGroup.get('validityStartHour').value }}</div>
+          </div>
+        </div>
+        <div fxFlex="50%" class="form-container" fxLayout="column">
+          <div class="form-input">
+            <div class="form-input__label">
+              {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_END' | translate }}
+            </div>
+            <div class="form-input__value">{{ getDate(formGroup.get('validityEnd').value) }}</div>
+          </div>
+          <div class="form-input">
+            <div class="form-input__label">
+              {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_END_HOUR' | translate }}
+            </div>
+            <div class="form-input__value">{{ formGroup.get('validityEndHour').value }}</div>
+          </div>
+        </div>
+      </div>
+      <div fxFlex="100%" class="form-container" fxLayout="column">
+        <div class="form-input">
+          <div class="form-input__label">
+            {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.REQUEST_STATE' | translate }}
+          </div>
+          <div class="form-input__value">
+            {{ getRequestStateGlobal(formGroup.get('requestState').value) | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex="100%" class="section-container">
+    <div class="section-content" fxLayout="row wrap">
+      <div class="section-title">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART1.GENERAL' | translate }}</div>
+      <div class="form-container" fxLayout="row wrap" fxFlex="100%">
+        <!-- Nave -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.INDUSTRIAL_SHED' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('industrialShed').value }}</div>
+        </div>
+
+        <!-- Destino cliente -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.DESTINY_CLIENT' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('destinyClient').value }}</div>
+        </div>
+
+        <!-- Producto -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.PRODUCT' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('product').value }}</div>
+        </div>
+
+        <!-- Formato -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.FORMAT' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('format').value }}</div>
+        </div>
+
+        <!-- Numero de contrato -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.NUM_AGREEMENT' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('numAgreement').value }}</div>
+        </div>
+
+        <!-- OC -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.OC' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('OC').value }}</div>
+        </div>
+
+        <!-- Num agris -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.NUM_AGRIS' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('numAgris').value }}</div>
+        </div>
+
+        <!-- Destino cliente -->
+        <div class="form-input" fxFlex="33%">
+          <div class="form-input__label">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.DESTINY_DIRECTION' | translate }}</div>
+          <div class="form-input__value">{{ formGroup.get('destinyDirection').value }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- STEP 2 -->
+  <label class="main-title">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.TITLE_STEP2' | translate }}</label>
+  <div fxFlex="100%" class="section-container">
+    <div class="section-content">
+      <table class="association-table mat-elevation-z8">
+        <thead>
+          <tr>
+            <th>{{ 'REQUEST_NEW.TABLE_RELATION.NAME' | translate }}</th>
+            <th>{{ 'REQUEST_NEW.TABLE_RELATION.RUT' | translate }}</th>
+            <th>{{ 'REQUEST_NEW.TABLE_RELATION.PATENT' | translate }}</th>
+            <th>{{ 'REQUEST_NEW.TABLE_RELATION.STATE' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-row" *ngFor="let association of associations">
+            <td>{{ association.Driver.LastName }}, {{ association.Driver.Name }}</td>
+            <td>{{ association.Driver.RUT }}</td>
+            <td>{{ association.Vehicle.Patent }}</td>
+            <td>{{ getRequestState(association.Active).text | translate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

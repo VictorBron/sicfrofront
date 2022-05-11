@@ -1,0 +1,90 @@
+<div class="intra-main-body">
+  <form
+    *ngIf="!dataSent"
+    [formGroup]="recoverPassForm"
+    class="intra-main-body__form"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+  >
+    <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center">
+      <label class="title-label">{{ 'LOGIN.TITLES.CHANGE_PASSWORD' | translate }}</label>
+      <div>
+        <mat-form-field class="form-field">
+          <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="email"
+            placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('email') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>{{ 'LOGIN.PASSWORD' | translate }}</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="newPassword"
+            placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>{{ 'LOGIN.REPASSWORD' | translate }}</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="renewPassword"
+            placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('renewPassword') | translate }}</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div fxLayoutGap="30px" fxLayout="row" fxLayoutAlign="center center">
+        <button
+          class="recover-button"
+          fxLayout="row"
+          type="button"
+          color="primary"
+          (click)="onCancelClick()"
+          matTooltip="{{ 'LOGIN.TOOLTIPS.CANCEL' | translate }}"
+        >
+          {{ 'LOGIN.BUTTONS.CANCEL' | translate }}
+        </button>
+
+        <button
+          class="recover-button"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          type="button"
+          color="primary"
+          (click)="onChangePassword()"
+          matTooltip="{{ 'LOGIN.TOOLTIPS.RESTORE_PASSWORD' | translate }}"
+        >
+          {{ 'LOGIN.BUTTONS.RESTORE_PASSWORD' | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div *ngIf="dataSent" class="intra-main-body__form" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
+      <label class="title-label">{{ requestStatus | translate }}</label>
+      <button
+        class="recover-button"
+        fxLayout="row"
+        type="button"
+        color="primary"
+        (click)="onCancelClick()"
+        matTooltip="{{ 'LOGIN.TOOLTIPS.BACK' | translate }}"
+      >
+        {{ 'LOGIN.BUTTONS.BACK' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

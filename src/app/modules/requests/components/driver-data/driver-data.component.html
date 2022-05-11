@@ -1,0 +1,72 @@
+<form [formGroup]="formGroup" autocomplete="off" class="intra-main-body__form">
+  <div fxFlex="100%" class="title-label">
+    {{ 'REQUEST_NEW.DRIVER_CREATION.TITLES.CREATION_NEW_DRIVER' | translate }}
+  </div>
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'DRIVERS.RUT' | translate }}</mat-label>
+    <input
+      matInput
+      formControlName="rut"
+      placeholder="{{ 'DRIVERS.RUT_PLACEHOLDER' | translate }}"
+      required
+    />
+    <mat-hint>{{ getTextByKey('rut') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'DRIVERS.NAME' | translate }}</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      placeholder="{{ 'DRIVERS.NAME_PLACEHOLDER' | translate }}"
+      required
+    />
+    <mat-hint>{{ getTextByKey('name') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'DRIVERS.LAST_NAME' | translate }}</mat-label>
+    <input
+      matInput
+      formControlName="lastName"
+      placeholder="{{ 'DRIVERS.LAST_NAME_PLACEHOLDER' | translate }}"
+      required
+    />
+    <mat-hint>{{ getTextByKey('lastName') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'DRIVERS.TELEPHONE' | translate }}</mat-label>
+    <input
+      matInput
+      formControlName="telephone"
+      placeholder="{{ 'DRIVERS.TELEPHONE_PLACEHOLDER' | translate }}"
+      required
+    />
+    <mat-hint>{{ getTextByKey('telephone') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'DRIVERS.EMAIL' | translate }}</mat-label>
+    <input
+      matInput
+      formControlName="email"
+      placeholder="{{ 'DRIVERS.EMAIL_PLACEHOLDER' | translate }}"
+    />
+    <mat-hint>{{ getTextByKey('email') | translate }}</mat-hint>
+  </mat-form-field>
+
+</form>
+
+<div class="intra-main-body__buttons">
+  <div class="intra-main-body__buttons__left">
+    <button class="btn btn-edit" mat-raised-button (click)="submitCancel()">
+      {{ 'REQUEST_NEW.DRIVER_CREATION.BUTTONS.CANCEL' | translate }}
+    </button>
+  </div>
+  <div class="intra-main-body__buttons__right">
+    <button class="btn btn-discharge" mat-raised-button (click)="submitNewDriver()">
+      {{ 'REQUEST_NEW.DRIVER_CREATION.BUTTONS.CREATE_DRIVER' | translate }}
+    </button>
+  </div>
+</div>

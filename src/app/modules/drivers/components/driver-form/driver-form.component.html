@@ -1,0 +1,104 @@
+<div class="intra-container">
+  <div class="intra-main-title">
+    <div class="title-content">{{ title | translate }}</div>
+  </div>
+  <div class="intra-main-body">
+    <form [formGroup]="driverForm" class="intra-main-body__form">
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'DRIVERS.RUT' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="rut"
+          placeholder="{{ 'DRIVERS.RUT_PLACEHOLDER' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('rut') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="40%" class="form-field">
+        <mat-label>{{ 'DRIVERS.NAME' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="name"
+          placeholder="{{ 'DRIVERS.NAME_PLACEHOLDER' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('name') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="40%" class="form-field">
+        <mat-label>{{ 'DRIVERS.LAST_NAME' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="lastName"
+          placeholder="{{ 'DRIVERS.LAST_NAME_PLACEHOLDER' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('lastName') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'DRIVERS.TELEPHONE' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="phone"
+          placeholder="{{ 'DRIVERS.TELEPHONE_PLACEHOLDER' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('phone') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="40%" class="form-field">
+        <mat-label>{{ 'DRIVERS.EMAIL' | translate }}</mat-label>
+        <input
+          matInput
+          type="email"
+          formControlName="email"
+          placeholder="{{ 'DRIVERS.EMAIL_PLACEHOLDER' | translate }}"
+        />
+        <mat-hint>{{ getTextByKey('email') | translate }}</mat-hint>
+      </mat-form-field>
+    </form>
+
+    <div class="intra-main-body__buttons">
+      <div class="intra-main-body__buttons__left">
+        <button class="btn btn-back" (click)="onGoBackButtonClick()" matTooltip="{{ 'TOOLTIPS.BACK' | translate }}">
+          {{ 'DRIVERS.BUTTONS.GO_BACK' | translate }}
+        </button>
+      </div>
+      <div class="intra-main-body__buttons__right">
+        <button
+          *ngIf="formMode !== formTypes.CREATE_FORM"
+          class="btn btn-discharge"
+          (click)="onRemoveButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.REMOVE' | translate }}"
+        >
+          {{ 'DRIVERS.BUTTONS.REMOVE' | translate }}
+        </button>
+
+        <button
+          *ngIf="formMode !== formTypes.DETAIL_FORM"
+          class="btn btn-save"
+          (click)="onSaveButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.SAVE' | translate }}"
+          [disabled]="!driverForm.valid && driverForm.errors"
+        >
+          {{ 'DRIVERS.BUTTONS.SAVE_VEHICLE' | translate }}
+        </button>
+
+        <button
+          *ngIf="formMode === formTypes.DETAIL_FORM"
+          class="btn btn-edit"
+          (click)="onEditButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.EDIT' | translate }}"
+        >
+          {{ 'DRIVERS.BUTTONS.EDIT_VEHICLE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

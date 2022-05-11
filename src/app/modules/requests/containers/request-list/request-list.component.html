@@ -1,0 +1,194 @@
+<div class="intra-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div class="intra-main-title">
+    <div class="title-content">{{ 'REQUESTS.TITLE' | translate }}</div>
+  </div>
+
+  <div fxFill="100%" fxLayoutAlign="center center">
+    <app-request-list-table-filter
+      [ngClass]="showFilter ? 'show' : ''"
+      class="hidden"
+      [formGroupFilter]="formGroupFilter"
+      (searchDataCallback)="fetchRequests()"
+    ></app-request-list-table-filter>
+  </div>
+
+  <div class="intra-body-container">
+    <div class="table-container">
+      <div class="table-container__options">
+        <button
+          *ngIf="hasEditPermissions"
+          type="button"
+          color="primary"
+          (click)="onCreateButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.NEW_REQUEST' | translate }}"
+        >
+          <mat-icon>{{ TOOLTIPS.ADD }}</mat-icon>
+        </button>
+
+        <button
+          class="table-container__options__button"
+          type="button"
+          color="primary"
+          matTooltip="{{ 'TOOLTIPS.FILTER' | translate }}"
+          (click)="showFilter = !showFilter"
+        >
+          <mat-icon>{{ TOOLTIPS.SEARCH }}</mat-icon>
+        </button>
+
+        <button
+          class="table-container__options__button"
+          type="button"
+          color="primary"
+          matTooltip="{{ 'TOOLTIPS.EXCEL_DOWNLOAD' | translate }}"
+          (click)="downloadTable()"
+        >
+          <mat-icon class="container__options__button__icon">{{ TOOLTIPS.EXCEL_DOWNLOAD }}</mat-icon>
+        </button>
+
+        <button
+          *ngIf="hasCreate"
+          class="table-container__options__button"
+          type="button"
+          color="primary"
+          matTooltip="{{ 'TOOLTIPS.EXCEL_UPLOAD' | translate }}"
+          (click)="navigateMassiveUpload()"
+        >
+          <mat-icon>{{ TOOLTIPS.EXCEL_UPLOAD }}</mat-icon>
+        </button>
+
+        <button
+          *ngIf="false"
+          class="table-container__options__button"
+          type="button"
+          color="primary"
+          matTooltip="{{ 'TOOLTIPS.PRINT_TABLE' | translate }}"
+          (click)="showUpload = !showUpload"
+        >
+          <mat-icon>{{ TOOLTIPS.PRINT }}</mat-icon>
+        </button>
+      </div>
+
+      <div class="table-container__table">
+        <table
+          mat-table
+          [dataSource]="dataSourceFiltered"
+          matSort
+          (matSortChange)="sortData($event)"
+          class="mat-elevation-z8"
+        >
+          <ng-container matColumnDef="request-options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <app-overlay-options [element]="element" [options]="optionsRowTable"></app-overlay-options>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ClientName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ClientName">
+              {{ tableHeaders[1] }}
+            </th>
+            <td mat-cell *matCellDef="let element" style="max-width: 10px;">{{ element.ClientName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Patent">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="Patent">
+              {{ tableHeaders[2] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.VehiclePatent }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="FullName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="FullName">
+              {{ tableHeaders[3] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.DriverName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="RUT">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="RUT">
+              {{ tableHeaders[4] }}
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.DriverRUT }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ValidityStart">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ValidityStart">
+              {{ tableHeaders[5] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.ValidityStart }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ValidityEnd">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ValidityEnd">
+              {{ tableHeaders[6] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.ValidityEnd }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ValidityStartHour">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ValidityStartHour">
+              {{ tableHeaders[7] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.ValidityStartHour }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ValidityEndHour">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ValidityEndHour">
+              {{ tableHeaders[8] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.ValidityEndHour }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="RequestState">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="RequestState">
+              {{ tableHeaders[9] }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.state }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ModifiedBy">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ModifiedBy">
+              {{ tableHeaders[10] }}
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.ModifiedBy }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Modified">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="Modified">{{ tableHeaders[11] }}</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.Modified }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsRequests"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsRequests"></tr>
+        </table>
+
+        <!-- Paginator TO-DO BORRAR CUANDO CREE EL COMPONENTE TABLA CON TODO ESTO -->
+        <mat-paginator
+          #paginator
+          [length]="length"
+          [pageSizeOptions]="pageSizeOptions"
+          [pageIndex]="pageIndex"
+          (page)="pageEvent($event)"
+          aria-label="Select page"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

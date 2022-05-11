@@ -1,0 +1,73 @@
+@import '../assets/css/itcss/settings/settings';
+
+$appContainerZIndex: 0;
+$appWaitSpinnerZIndex: 10;
+$appLoadingScreenZIndex: $appWaitSpinnerZIndex + 1;
+
+:host {
+  display: block;
+
+  table {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 25px;
+    padding: 40px 40px 20px;
+  }
+
+  .content-fordward {
+    position: relative;
+    min-height: 100vh;
+    &__container {
+      // max-width: $max-width-container;
+      // margin: auto;
+    }
+  }
+  .login-background {
+    background-color: $background-login;
+    height: 100%;
+    &::after {
+      content: '';
+      background-image: url('../assets/images/logo_gray_no_title.png');
+      background-repeat: no-repeat;
+      top: 60%;
+      right: 2%;
+      position: absolute;
+      height: 35%;
+      width: 35%;
+      opacity: 0.1;
+      background-size: auto 100%;
+    }
+  }
+  app-general-loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: $appWaitSpinnerZIndex;
+    pointer-events: none;
+    top: 0;
+  }
+}
+
+// SNACK BAR
+::ng-deep .mat-snack-bar-container {
+  position: relative;
+  top: 90px;
+}
+
+::ng-deep .success-snackbar {
+  background: #8eed8c;
+  color: #212621;
+  .mat-simple-snackbar-action {
+    color: inherit;
+  }
+}
+
+::ng-deep .error-snackbar {
+  background: #ff9483;
+  color: #212621;
+  .mat-simple-snackbar-action {
+    color: inherit;
+  }
+}

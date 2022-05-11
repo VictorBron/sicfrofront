@@ -1,0 +1,44 @@
+@import '../../../../../assets/css/itcss/generic/generic';
+@import '../../../../../assets/css/itcss/objects/partials/objects.form';
+@import './../../../../../assets/css/itcss/objects/partials/objects.table';
+@import './../../../../../assets/css/mat-icon/mat-icon-style.scss';
+
+:host {
+  .intra-container {
+    max-width: $max-width-container-xl;
+    .main-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $main-title-color;
+    }
+
+    .form-input {
+      margin-bottom: 20px;
+      &__label {
+        color: $input-form-color;
+        font: 400 15px / 20px Roboto, 'Helvetica Neue', sans-serif;
+        margin-bottom: 15px;
+      }
+    }
+
+    .table-container {
+      width: 100%;
+    }
+
+    ::ng-deep .content-fordward {
+      &__container {
+        margin: initial;
+        .btn-save {
+          padding: 0px;
+          .load-file {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            display: block;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+<div class="intra-container">
+  <form [formGroup]="formGroup" autocomplete="off" class="intra-main-body__form">
+    <div fxFlex="50%" class="section-container">
+      <div class="section-content" fxLayout="row wrap">
+        <div class="section-title">
+          {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART1.VALIDITY_DATE' | translate }}
+        </div>
+        <mat-form-field fxFlex="50%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_START' | translate }}</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            formControlName="validityStart"
+            required
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_START_PLACEHOLDER' | translate }}"
+            [min]="dateToday"
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-hint>{{ getTextByKey('validityStart') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_END' | translate }}</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker2"
+            formControlName="validityEnd"
+            required
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_END_PLACEHOLDER' | translate }}"
+            [min]="minDate"
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-hint>{{ getTextByKey('validityEnd') | translate }}</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxFlex="50%" class="section-container">
+      <div class="section-content" fxLayout="row wrap">
+        <div class="section-title">
+          {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART1.VALIDITY_HOUR' | translate }}
+        </div>
+
+        <mat-form-field fxFlex="50%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_START_HOUR' | translate }}</mat-label>
+          <input type="time" matInput formControlName="validityStartHour" min="00:00" max="23:59" #timeStart/>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50%">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.VALIDITY_END_HOUR' | translate }}</mat-label>
+          <input type="time" matInput formControlName="validityEndHour" min="00:00" max="23:59" #timeEnd/>
+          <mat-hint>{{ getTextByKey('validityEndHour') | translate }}</mat-hint>
+      </mat-form-field>
+      </div>
+    </div>
+
+    <div fxFlex="100%" class="section-container">
+      <div class="section-content" fxLayout="row wrap">
+        <div class="section-title">
+          {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART1.GENERAL' | translate }}
+        </div>
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.INDUSTRIAL_SHED' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="industrialShed"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.INDUSTRIAL_SHED_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('industrialShed') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.DESTINY_CLIENT' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="destinyClient"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.DESTINY_CLIENT_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('destinyClient') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.PRODUCT' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="product"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.PRODUCT_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('product') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.FORMAT' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="format"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.FORMAT_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('format') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.NUM_AGREEMENT' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="numAgreement"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.NUM_AGREEMENT_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('numAgreement') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.OC' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="OC"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.OC_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('OC') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.NUM_AGRIS' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="numAgris"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.NUM_AGRIS_PLACEHOLDER' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('numAgris') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="25%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.DESTINY_DIRECTION' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="destinyDirection"
+            placeholder="{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.DESTINY_DIRECTION' | translate }}"
+            required
+          />
+          <mat-hint>{{ getTextByKey('destinyDirection') | translate }}</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

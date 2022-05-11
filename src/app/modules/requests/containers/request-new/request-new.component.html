@@ -1,0 +1,64 @@
+<div class="intra-container">
+  <div class="intra-main-title">
+    <div class="title-content">{{ title | translate }}</div>
+  </div>
+  <div class="intra-main-body" fxLayout="column">
+    <form
+      class="intra-main-body__form"
+      [formGroup]="requestFormGroup"
+      autocomplete="off"
+      fxFlex="100%"
+      fxLayout="column"
+    >
+      <mat-stepper orientation="vertical" #stepper linear>
+        <mat-step completed="false">
+          <ng-template matStepLabel>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.TITLE_STEP1' | translate }}</ng-template>
+          <app-request-data [edit]="edit" [formGroup]="requestFormGroup"></app-request-data>
+          <div class="intra-main-body__buttons">
+            <div class="intra-main-body__buttons__right">
+              <button class="btn btn-save" mat-raised-button (click)="sumitStep1()">
+                {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.BUTTONS.CONTINUE' | translate }}
+              </button>
+            </div>
+          </div>
+        </mat-step>
+
+        <mat-step fxLayoutGap="40px" completed="false">
+          <ng-template matStepLabel>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.TITLE_STEP2' | translate }}</ng-template>
+          <app-vehicle-driver
+            [edit]="edit"
+            [disabled]="disabled"
+            [vehicleDriverInput]="vehicleDriver"
+            (asociationDataCallback)="setAsociationsForm($event)"
+          >
+          </app-vehicle-driver>
+          <div *ngIf="!edit" class="intra-main-body__buttons">
+            <div class="intra-main-body__buttons__right">
+              <button class="btn btn-save" mat-raised-button (click)="sumitStep2()">
+                {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.BUTTONS.CONTINUE' | translate }}
+              </button>
+            </div>
+          </div>
+        </mat-step>
+
+        <mat-step *ngIf="!edit" completed="false">
+          <ng-template matStepLabel>{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.TITLE_STEP3' | translate }}</ng-template>
+          <app-request-confirm [formGroup]="requestFormGroup" [associations]="vehicleDriver"> </app-request-confirm>
+        </mat-step>
+      </mat-stepper>
+    </form>
+    <div class="intra-main-body__buttons">
+      <div class="intra-main-body__buttons__left">
+        <button class="btn btn-edit btn-back" mat-raised-button (click)="navigateRequestList()">
+          {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.BUTTONS.BACK' | translate }}
+        </button>
+      </div>
+
+      <div class="intra-main-body__buttons__right">
+        <button *ngIf="!disabled" class="btn btn-save btn-submit" mat-raised-button (click)="onSubmit()">
+          {{ submitButton | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

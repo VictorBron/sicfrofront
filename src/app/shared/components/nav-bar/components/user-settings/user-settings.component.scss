@@ -1,0 +1,76 @@
+$overlay-color: #888;
+$border-color: #ccc;
+$border-bottom: #8b8b8b;
+$hover-color: #006ab3;
+
+.user-options {
+  min-width: 120px;
+  padding: 9px;
+  color: white;
+  display: flex;
+  cursor: pointer;
+
+  &__img {
+    padding: 0 5px;
+
+    mat-icon {
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    min-width: 60px;
+    margin: 0 10px;
+    font-size: 17px;
+    line-height: 2;
+  }
+  &__options {
+    button {
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      mat-icon {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.options-list {
+  width: 140px;
+  border: $border-color solid 1px;
+  border-radius: 5px;
+  background: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  & .option {
+    list-style-type: none;
+    border-bottom: solid 1px $border-bottom;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    height: 22px;
+    color: $hover-color;
+
+    &__icon {
+      padding: 0 10px;
+    }
+
+    &__text {
+      padding: 0 10px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      background: $hover-color;
+      color: white;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

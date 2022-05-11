@@ -1,0 +1,23 @@
+$background-scroll: rgb(190, 190, 190);
+
+:host {
+  mat-paginator {
+    margin-top: 25px;
+  }
+
+  .content-table {
+    overflow: auto;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $background-scroll;
+    border-radius: 10px;
+  }
+}

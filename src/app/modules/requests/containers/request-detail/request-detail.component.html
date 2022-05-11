@@ -1,0 +1,16 @@
+<div class="intra-container">
+  <div class="intra-main-title">
+    <div class="title-content">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.TITLE_DETAIL' | translate }}</div>
+  </div>
+
+  <div class="intra-main-body" fxLayout="column">
+    <app-request-confirm [formGroup]="requestFormGroup" [associations]="vehicleDriver"> </app-request-confirm>
+    <div class="intra-main-body__buttons">
+      <div class="intra-main-body__buttons__left">
+        <button class="btn btn-save btn-back" mat-raised-button (click)="onGoBackButtonClick()">
+          {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.BUTTONS.BACK' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

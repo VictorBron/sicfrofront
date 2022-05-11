@@ -1,0 +1,54 @@
+<div class="intra-container">
+  <div class="intra-main-body" fxLayout="column">
+    <div mat-dialog-title>
+      {{ title | translate }}
+    </div>
+    <div mat-dialog-content>
+      <div>{{ message | translate }}</div>
+    </div>
+    <div mat-dialog-content>
+      <div>{{ textInformative | translate }}</div>
+    </div>
+  </div>
+</div>
+<table *ngIf="showQueryResult" fxFlex="100%" fxLayoutGap="20px">
+  <tr>
+    <td fxFlex="30%" class="mat-icon-placeholder">
+      <!-- TODO TOOLTIPS BUG -->
+      <!-- <mat-icon *ngIf="showQueryResult === 0" class='green'>{{ TOOLTIPS.CHECK }}</mat-icon>
+        <mat-icon *ngIf="showQueryResult === 1" class='red'>{{ TOOLTIPS.INFORMATION }}</mat-icon> -->
+      <mat-icon *ngIf="showQueryResult === 1" class="mat-icon-placeholder__green">check</mat-icon>
+      <mat-icon *ngIf="showQueryResult === 2" class="mat-icon-placeholder__red">info</mat-icon>
+    </td>
+    <td fxFlex="70%">
+      <tr *ngIf="iconMessage1">
+        {{
+          iconMessage1 | translate
+        }}
+      </tr>
+      <tr *ngIf="iconMessage2">
+        {{
+          iconMessage2 | translate
+        }}
+      </tr>
+    </td>
+  </tr>
+</table>
+<div>
+  {{ confirmText | translate }}
+</div>
+<div class="intra-main-body__buttons">
+  <div class="intra-main-body__buttons__right">
+    <div mat-dialog-actions>
+      <button mat-raised-button *ngIf="type === 4" class="btn btn-save btn-back" (click)="onCancelClick()">
+        {{ 'MODAL.ACTIONS.CANCEL' | translate }}
+      </button>
+      <button mat-raised-button *ngIf="type === 3" class="btn btn-save btn-back" (click)="onNoClick()">
+        {{ 'MODAL.ACTIONS.NO' | translate }}
+      </button>
+      <button mat-raised-button *ngIf="type > 0" class="btn btn-save btn-submit" (click)="onYesClick()">
+        {{ (type === 2 ? 'MODAL.ACTIONS.ACCEPT' : 'MODAL.ACTIONS.YES') | translate }}
+      </button>
+    </div>
+  </div>
+</div>

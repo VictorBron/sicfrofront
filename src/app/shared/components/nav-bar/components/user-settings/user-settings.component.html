@@ -1,0 +1,30 @@
+<div fxFlex class="user-options" (click)="isOpen = !isOpen">
+  <div class="user-options__img">
+    <mat-icon>perm_identity</mat-icon>
+  </div>
+  <div class="user-options__text">{{ userName }}</div>
+  <div class="user-options__options">
+    <button class="overlay-button" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </div>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  (detach)="isOpen = false"
+  (backdropClick)="isOpen = false"
+>
+  <ul class="options-list">
+    <li class="option" (click)="logOut()">
+      <span class="option__icon">
+        <mat-icon>exit_to_app</mat-icon>
+      </span>
+      <div class="option__text">{{ 'NAVBAR.LOGOUT' | translate }}</div>
+    </li>
+  </ul>
+</ng-template>

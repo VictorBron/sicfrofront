@@ -1,0 +1,44 @@
+@import '../../settings/settings';
+
+.intra-container {
+  flex-direction: column;
+  display: flex;
+  max-width: $max-width-container;
+  margin: auto;
+
+  .intra-main-title {
+    position: relative;
+    width: 100%;
+
+    .title-content {
+      font-size: 30px;
+      text-transform: uppercase;
+      padding: 3rem 0;
+      color: $main-title-color;
+      font-weight: 500;
+      width: fit-content;
+    }
+    &::after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      border-radius: 5px;
+      background-color: $border-main-title-color;
+      position: absolute;
+      opacity: 0.5;
+    }
+  }
+}
+
+.intra-body-container {
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}

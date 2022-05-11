@@ -1,0 +1,15 @@
+<div class="wait-spinner-parent" *ngIf="loading">
+  <!-- Backdrop. -->
+  <div class="wait-spinner-background" [ngStyle]="{ visibility: showBackdrop ? 'visible' : 'hidden' }"></div>
+  <!-- Loading animation. -->
+  <div class="wait-spinner" fxLayout="row" fxLayoutAlign="center center">
+    <div class="progress-snipper">
+      <img alt="logo_fordward" src="./../../../../../assets/images/logo.png" width="150" height="70" />
+      <mat-progress-spinner
+        mode="indeterminate"
+        [color]="colorMaterial"
+        aria-label="Loading Indicator"
+      ></mat-progress-spinner>
+    </div>
+  </div>
+</div>

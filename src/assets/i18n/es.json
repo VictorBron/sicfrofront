@@ -1,0 +1,532 @@
+{
+  "EMPTY": "",
+  "CLIENTS": {
+    "CITY": "Ciudad",
+    "CREATE": "Nuevo cliente",
+    "DETAIL": "Detalle del cliente",
+    "DIRECTION": "Dirección",
+    "EDIT": "Editar cliente",
+    "EMAIL": "Email",
+    "ID": "ID Cliente",
+    "NAME": "Nombre",
+    "OT": "Razón social",
+    "GIRO": "Giro",
+    "RUT": "RUT",
+    "TELEPHONE": "Teléfono",
+    "TITLE": "Clientes",
+    "BUTTONS": {
+      "SAVE_CLIENT": "Guardar",
+      "EDIT_CLIENT": "Editar",
+      "GO_BACK": "Volver",
+      "REMOVE": "Eliminar"
+    },
+    "SNACK": {
+      "UNKNOWN_ERROR": "Sucedió un error ",
+      "REPEATED_RUT": "Ya existe un cliente con el RUT proporcionado ",
+      "FORM_ERROR": "Debe completar el formulario correctamente",
+      "KEY_ALREADY_USED": "Este cliente no se puede eliminar"
+    }
+  },
+  "DRIVERS": {
+    "ID_DRIVER": "ID",
+    "CREATE": "Nuevo chofer",
+    "DETAIL": "Detalle del chofer",
+    "EDIT": "Editar chofer",
+    "NAME": "Nombre",
+    "NAME_PLACEHOLDER": "Nombre",
+    "LAST_NAME": "Apellido",
+    "LAST_NAME_PLACEHOLDER": "Apellido",
+    "RUT": "RUT",
+    "RUT_PLACEHOLDER": "RUT",
+    "EMAIL": "Correo",
+    "EMAIL_PLACEHOLDER": "Correo",
+    "TELEPHONE": "Teléfono de contacto",
+    "TELEPHONE_PLACEHOLDER": "Teléfono de contacto",
+    "TITLE": "Choferes",
+    "BUTTONS": {
+      "SAVE_VEHICLE": "Guardar",
+      "EDIT_VEHICLE": "Editar",
+      "GO_BACK": "Volver",
+      "REMOVE": "Eliminar"
+    },
+    "SNACK": {
+      "FORM_ERROR": "Se debe completar el formulario correctamente",
+      "UNKNOWN_ERROR": "Sucedió un error ",
+      "REPEATED_RUT": "Ya existe un chofer con el RUT proporcionado ",
+      "KEY_ALREADY_USED": "Este chofer no se puede eliminar"
+    }
+  },
+  "DRIVER_CREATION": {
+    "TITLES": {
+      "CREATION_NEW_DRIVER": "Datos del nuevo chofer"
+    },
+    "FORM": {
+      "NAME": "Nombre",
+      "NAME_PLACEHOLDER": "Nombre",
+      "LASTNAME": "Apellido",
+      "LASTNAME_PLACEHOLDER": "Apellido",
+      "RUT": "RUT",
+      "RUT_PLACEHOLDER": "RUT",
+      "EMAIL": "Correo",
+      "EMAIL_PLACEHOLDER": "Correo",
+      "TELEPHONE": "Teléfono de contacto",
+      "TELEPHONE_PLACEHOLDER": "Teléfono de contacto",
+      "SELECT_DRIVER": "Seleccione el chofer",
+      "SELECT_DRIVER_PLACEHOLDER": "Seleccione el chofer",
+      "SEARCH_RUT": "Buscador por RUT",
+      "SEARCH_RUT_PLACEHOLDER": "Buscador por RUT"
+    },
+    "SNACK": {},
+    "BUTTONS": {
+      "CREATE_DRIVER": "Dar de alta",
+      "CREATE_DRIVER_NEW": "Nuevo"
+    }
+  },
+  "INDUSTRIAL_SHEDS": {
+    "ID_INDUSTRIAL_SHED": "ID",
+    "ID_CLIENT": "ID Cliente",
+    "DESTINY_DIRECTION": "Dirección de destino",
+    "DESCRIPTION": "Descripción"
+  },
+  "LOGIN": {
+    "PASSWORD": "Contraseña",
+    "REPASSWORD": "Repita contraseña",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "FORGOT_PASSWORD": "¿Has olvidado la contraseña?",
+    "USER": "User",
+    "USER_ERROR": "El usuario no puede estar vacío ",
+    "EMAIL": "Correo",
+    "EMAIL_PLACEHOLDER": "Correo",
+    "PASSWORD_CHANGED": "Su contraseña ha sido cambiada con éxito",
+    "PASSWORD_ERROR": "Ha ocurrido un error al modificar la contraseña",
+    "BUTTONS": {
+      "RESTORE_PASSWORD": "Cambiar contraseña",
+      "BACK": "Volver",
+      "LOGIN": "Acceder",
+      "REQUEST": "Solicitar",
+      "CANCEL": "Cancelar"
+    },
+    "TITLES": {
+      "LOGIN": "Inicio de sesión",
+      "SEND_EMAIL": "Email de recuperación",
+      "SENDED_EMAIL": "Enlace enviado, revise su correo electrónico",
+      "CHANGE_PASSWORD": "Cambio de contraseña"
+    },
+    "TOOLTIPS": {
+      "LOGIN": "Acceder",
+      "RESTORE_PASSWORD": "Recuperar contraseña",
+      "BACK": "Volver",
+      "REQUEST": "Solicitar",
+      "CANCEL": "Cancelar"
+    },
+    "SNACK": {
+      "DENIED": "Usuario y/o contraseña incorrectos",
+      "BLOQUED": "Su cuenta ha sido desactivada, favor comuníquese con el administrador del SW"
+    }
+  },
+  "NAVBAR": {
+    "DRIVERS": "Choferes",
+    "HOMEPAGE": "Inicio",
+    "LOGOUT": "Logout",
+    "REQUESTS": "Solicitudes",
+    "VEHICLES": "Vehículos",
+    "USERS": "Usuarios",
+    "CLIENTS": "Clientes",
+    "SCHEDULES": "Planificaciones"
+  },
+  "NOT_ALLOWED": {
+    "TITLE": "Actión no permitida",
+    "YOU_DONT_HAVE_PERMISSIONS": "No tiene permisos para acceder a esta sección"
+  },
+  "REQUESTS": {
+    "TITLE": "Solicitudes",
+    "ID_REQUEST": "ID",
+    "DESTINY_CLIENT": "Destino del cliente",
+    "NUM_AGRIS": "Num  Agris",
+    "NUM_AGREEMENT": "Número de contrato",
+    "OC": "OC",
+    "PRODUCT": "Producto",
+    "VALIDITY_START": "Fecha inicio",
+    "VALIDITY_START_HOUR": "Hora inicio",
+    "VALIDITY_END": "Fecha fin",
+    "VALIDITY_END_HOUR": "Hora fin",
+    "MODIFIED": "Modificado el",
+    "MODIFIED_BY": "Modificado por",
+    "REQUEST_STATE": {
+      "TITLE": "Estado",
+      "DEFEATED": "Vencido",
+      "CANCELED": "Anulado",
+      "VALID": "Valido",
+      "UNKNOWN": "Desconocido",
+      "ALL": "Todos"
+    },
+    "MODAL": {
+      "CONFIRM_TITLE": "¿Está seguro que desea anular esta solicitud?"
+    }
+  },
+  "REQUEST_LIST": {
+    "FILTER": {
+      "VALIDITY_START": "Fecha inicio de validez",
+      "VALIDITY_START_HOUR": "Hora inicio de validez",
+      "VALIDITY_START_PLACEHOLDER": "Inicio de validez",
+      "VALIDITY_END": "Fecha fin de validez",
+      "VALIDITY_END_HOUR": "Hora fin de validez",
+      "VALIDITY_END_PLACEHOLDER": "Inicio de validez",
+      "PATENT": "Patente",
+      "PATENT_PLACEHOLDER": "Patente",
+      "REQUEST_STATE": "Estado",
+      "REQUEST_STATE_PLACEHOLDER": "Estado",
+      "ALL": "Todos",
+      "CLIENT": "Cliente",
+      "CLIENT_PLACEHOLDER": "Cliente",
+      "SEARCH": "Buscar"
+    },
+    "SNACK": "Compruebe la fecha de inicio"
+  },
+  "REQUEST_NEW": {
+    "REQUEST_BASIC_DATA": {
+      "TITLES": {
+        "TITLE_DETAIL": "Detalle de la solicitud",
+        "TITLE_EDIT": "Modificación de la solicitud",
+        "TITLE_NEW": "Nueva solicitud",
+        "TITLE_STEP1": "Datos de la solicitud",
+        "TITLE_STEP2": "Datos de transporte",
+        "TITLE_STEP3": "Confirmar solicitud",
+        "TITLE_STEP4": "Fechas validez",
+        "TITLE_STEP5": "Datos generales",
+        "PART1": {
+          "VALIDITY_DATE": "Fecha de validez",
+          "VALIDITY_HOUR": "Hora de validez",
+          "ADMINISTRATIVE": "Datos administrativos",
+          "GENERAL": "Datos generales",
+          "DESTINY": "Datos de destino"
+        },
+        "PART2": {
+          "SECTION_DRIVER": "Chofer",
+          "SECTION_VEHICLE": "Vehículo",
+          "SELECT_DRIVER": "Seleccione el chofer",
+          "SELECT_VEHICLE": "Seleccione el vehículo"
+        },
+        "PART3": {}
+      },
+      "CLIENT_NAME": "Cliente",
+      "VALIDITY_START": "Fecha inicio de validez",
+      "VALIDITY_START_HOUR": "Hora inicio de validez",
+      "VALIDITY_START_PLACEHOLDER": "Inicio de validez",
+      "VALIDITY_END": "Fecha fin de validez",
+      "VALIDITY_END_HOUR": "Hora fin de validez",
+      "VALIDITY_END_PLACEHOLDER": "Inicio de validez",
+      "NUM_AGRIS": "Num  Agris",
+      "NUM_AGRIS_PLACEHOLDER": "Num  Agris",
+      "NUM_AGREEMENT": "Número de contrato",
+      "NUM_AGREEMENT_PLACEHOLDER": "Número de contrato",
+      "DESTINY_DIRECTION": "Dirección de destino",
+      "DESTINY_DIRECTION_PLACEHOLDER": "Dirección de destino",
+      "OC": "OC",
+      "OC_PLACEHOLDER": "OC",
+      "PRODUCT": "Producto",
+      "PRODUCT_PLACEHOLDER": "Producto",
+      "GIRO": "Giro",
+      "GIRO_PLACEHOLDER": "Giro",
+      "DESTINY_CLIENT": "Destino cliente",
+      "DESTINY_CLIENT_PLACEHOLDER": "Destino cliente",
+      "INDUSTRIAL_SHED": "Nave",
+      "INDUSTRIAL_SHED_PLACEHOLDER": "Nave",
+      "FORMAT": "Formato",
+      "FORMAT_PLACEHOLDER": "Formato",
+      "REQUEST_STATE": "Estado",
+      "BUTTONS": {
+        "NEW_REQUEST": "Añadir solicitud",
+        "REMOVE_REQUEST": "Eliminar solicitud",
+        "ASOCIATE": "Asociar",
+        "CONTINUE": "Continuar",
+        "CONFIRM": "Confirmar solicitud",
+        "REFRESH": "Actualizar solicitud",
+        "BACK": "Volver"
+      },
+      "MODAL": {
+        "CREATE_REQUEST": "¿Seguro que quiere crear esta solicitud?",
+        "UPDATE_REQUEST": "¿Seguro que quiere actualizar esta solicitud?",
+        "ANULATE_TRANSPORT": "¿Seguro que quiere anular este transporte?"
+      }
+    },
+
+    "DRIVER_CREATION": {
+      "TITLES": {
+        "CREATION_NEW_DRIVER": "Datos del nuevo chofer"
+      },
+      "FORM": {
+        "SELECT_DRIVER": "Seleccione el chofer",
+        "SELECT_DRIVER_PLACEHOLDER": "Seleccione el chofer",
+        "SEARCH_RUT": "Buscador por RUT",
+        "SEARCH_RUT_PLACEHOLDER": "Buscador por RUT"
+      },
+      "BUTTONS": {
+        "CREATE_DRIVER": "Dar de alta",
+        "CREATE_DRIVER_NEW": "Nuevo",
+        "CANCEL": "Cancelar"
+      }
+    },
+    "VEHICLE_CREATION": {
+      "TITLES": {
+        "CREATION_NEW_VEHICLE": "Datos del nuevo chofer"
+      },
+      "FORM": {
+        "SEARCH_PATENT": "Buscador por patente",
+        "SEARCH_PATENT_PLACEHOLDER": "Buscador por patente",
+        "SELECT_VEHICLE": "Seleccione el vehículo",
+        "SELECT_VEHICLE_PLACEHOLDER": "Seleccione el vehículo"
+      },
+      "BUTTONS": {
+        "ASSIGN": "Asignar",
+        "CREATE_VEHICLE_NEW": "NUEVO",
+        "CREATE_VEHICLE": "Dar de alta",
+        "CANCEL": "Cancelar"
+      }
+    },
+    "TABLE_RELATION": {
+      "NAME": "Apellidos, Nombre",
+      "RUT": "RUT",
+      "PATENT": "Patente",
+      "STATE": "Estado"
+    },
+    "UPLOAD": {
+      "TITLE": "Carga masiva",
+      "DOWNLOAD_TEMPLATE": "Descargar plantilla",
+      "DOWNLOAD": "Descargar",
+      "TEMPLATE": "Plantilla",
+      "ARCHIVE": "Archivo",
+      "UPLOAD": "Cargar archivo",
+      "SELECT": "Ningún archivo seleccionado",
+      "ARCHIVE_DATA": {
+        "ID": "ID",
+        "TITLE": "Previsualización del archivo",
+        "VALIDITY_START": "Fecha inicio",
+        "VALIDITY_END": "Fecha fin",
+        "VALIDITY_START_HOUR": "Hora inicio",
+        "VALIDITY_END_HOUR": "Hora fin",
+        "INDUSTRIAL_SHED": "Nave",
+        "DESTINY_CLIENT": "Destino cliente",
+        "PRODUCT": "Producto",
+        "FORMAT": "Formato",
+        "NUM_AGREEMENT": "Número de contrato",
+        "OC": "OC",
+        "NUM_AGRIS": "Num Agris",
+        "DESTINY_DIRECTION": "Dirección de destino",
+        "DRIVER_RUT": "RUT chofer",
+        "DRIVER_NAME": "Nombre chofer",
+        "DRIVER_LASTNAME": "Apellidos chofer",
+        "DRIVER_TELEPHONE": "Telefono chofer",
+        "PATENT": "Patente",
+        "STATE": "Estado"
+      },
+      "SNACK": {
+        "ERRORS": "Existen errores en la solicitud de carga",
+        "NO_ELEMENTS": "No existe ninguna solicitud a cargar"
+      },
+      "TABLE_ERRORS": {
+        "INVALID_DATE": "Alguna de las fechas introducidas no es válida",
+        "START_DATE": "La fecha de inicio ha de ser menor que la de fin",
+        "START_DATE_HOUR": "La hora de inicio ha de ser menor que la de fin",
+        "END_DATE_TODAY": "La fecha de inicio debe ser al menos a partir de hoy",
+        "RUT": "Formato de RUT incorrecto",
+        "RUT_INVALID": "No existe ningún chofer con este RUT en el sistema",
+        "RUT_REPEAT": "Duplicación de RUT en la solicitud",
+        "PATENT": "Formato de patente incorrecto",
+        "PATENT_INVALID": "No existe ningún vehículo con esta patente en el sistema",
+        "PATENT_REPEAT": "Duplicación de patente en la solicitud",
+        "NULL": "Alguno de los datos no está introducido"
+      },
+      "BUTTONS": {
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar"
+      },
+      "MODAL": {
+        "VALIDATE_TITLE": "VALIDANDO INFORMACIÓN",
+        "VALIDATE_TEXT": "Validando RUTs y patentes",
+        "REQUESTS_VALIDATE": "Solicitudes validadas",
+        "REQUESTS_CONFIRM": "¿Está seguro que quiere crear las solicitudes?"
+      }
+    }
+  },
+  "SCHEDULES": {
+    "TITLE": "Planificaciones vigentes",
+    "SCHEDULE": "Horario",
+    "CREATE": "Nueva planificación",
+    "DETAIL": "Detalle de la planificación",
+    "EDIT": "Editar planificación",
+    "CLIENT": "Cliente",
+    "DAY_FROM": "Fecha de inicio",
+    "DAY_TO": "Fecha de fin",
+    "HOUR_FROM": "Hora de inicio",
+    "HOUR_TO": "Hora de fin",
+    "COMMENT": "Comentario",
+    "COMMENT_PH": "Añade un comentario ",
+    "BUTTONS": {
+      "SAVE_SCHEDULE": "Guardar",
+      "EDIT_SCHEDULE": "Editar",
+      "GO_BACK": "Volver"
+    },
+    "SNACK": {
+      "FORM_ERROR": "Se debe completar el formulario correctamente",
+      "EDIT_ERROR": "No se pudo editar la planificación ",
+      "CREATE_ERROR": "No se pudo crear la planificación ",
+      "CLIENTS_ERROR": "No se pudieron obtener los clientes ",
+      "GET_SCHEDULE_ERROR": "No se pudo obtener la planificación "
+    }
+  },
+  "TABLE": {
+    "ACTIONS": {
+      "DETAIL": "Detalle",
+      "REMOVE": "Eliminar",
+      "SET_ACTIVE": "Validar",
+      "SET_INACTIVE": "Anular",
+      "EDIT": "Editar"
+    }
+  },
+  "USERS": {
+    "TITLE": "Usuarios",
+    "CREATE": "Nuevo usuario",
+    "DETAIL": "Detalle del usuario",
+    "EDIT": "Editar usuario",
+    "LOGIN": "Login",
+    "NAME_LAST_NAME": "Nombre y apellido",
+    "NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "RUT": "RUT",
+    "PHONE": "Teléfono",
+    "EMAIL": "Email",
+    "CLIENT": "Cliente",
+    "LAST_DATE": "Última fecha de ingreso",
+    "IS_CLIENT": "Es de cliente",
+    "IS_INSIDER": "Es interno",
+    "STATE": "Estado",
+    "USER_PROFILE": "Perfil",
+    "BUTTONS": {
+      "SAVE_USER": "Guardar",
+      "GO_BACK": "Volver",
+      "EDIT_USER": "Editar",
+      "REMOVE": "Eliminar"
+    },
+    "SNACK": {
+      "GET_ERROR": "No se pudieron obtener los datos del usuario ",
+      "UNKNOWN_ERROR": "Sucedió un error ",
+      "FORM_ERROR": "Se debe completar el formulario correctamente",
+      "CLIENTS_ERROR": "No se pudieron obtener los clientes ",
+      "REPEATED_RUT": "Ya existe un Usuario con el RUT proporcionado ",
+      "KEY_ALREADY_USED": "Este usuario no se puede eliminar",
+      "REPEATED_LOGIN": "Ya existe un usuario con el mismo login"
+    }
+  },
+  "VEHICLES": {
+    "CREATE": "Nuevo vehículo",
+    "DETAIL": "Detalle del vehículo",
+    "PATENT": "Patente",
+    "PATENT_PLACEHOLDER": "Patente",
+    "TYPE_VEHICLE": "Tipo de vehículo",
+    "TYPE": "Seleccione el tipo del vehículo",
+    "DESCRIPTION": "Descripción",
+    "DESCRIPTION_PLACEHOLDER": "Añade una descripción para el vehículo",
+    "EDIT": "Editar vehículo",
+    "ID_VEHICLE": "ID Vehículo",
+    "TITLE": "Vehículos",
+    "BUTTONS": {
+      "EDIT_VEHICLE": "Editar",
+      "GO_BACK": "Volver",
+      "SAVE_VEHICLE": "Guardar"
+    },
+    "SNACK": {
+      "UNKNOWN_ERROR": "Sucedió un error ",
+      "TYPES_ERROR": "No se pudieron obtener los tipos de vehículo",
+      "REPEATED_PATENT": "Ya existe un vehículo con la patente proporcionada",
+      "GET_ERROR": "No se pudo obtener el vehículo ",
+      "FORM_ERROR": "Se debe completar el formulario correctamente",
+      "KEY_ALREADY_USED": "Este vehiculo no se puede eliminar"
+    }
+  },
+  "TOOLTIPS": {
+    "REMOVE": "Borrar entrada",
+    "SEARCH": "Buscar",
+    "EDIT": "Editar",
+    "ACCESS_TIME": "Hora",
+    "FILTER": "Filtrar",
+    "ACTIVE": "Activar",
+    "ANULATE": "Anular",
+    "SAVE": "Guardar",
+    "BACK": "Volver",
+    "   ": "   ",
+    "NEW_REQUEST": "Nuevo registro",
+    "EXCEL_DOWNLOAD": "Bajar a Excel",
+    "EXCEL_UPLOAD": "Carga masiva",
+    "PRINT_TABLE": "Imprimir grilla"
+  },
+  "SNACK": {
+    "REQUEST": {
+      "FORM": {
+        "SELECT_DRIVER": "Seleccione el chofer",
+        "SELECT_VALID_DRIVER": "Seleccione un chofer que esté disponible",
+        "SELECT_VEHICLE": "Seleccione el vehículo",
+        "SELECT_VALID_VEHICLE": "Seleccione un vehículo que esté disponible",
+        "CHECK_REQUEST_DATA": "Existen errores en los datos de la solicitud",
+        "VEHICLE_DRIVER_MIN": "Debe existir al menos un transporte en la solicitud"
+      }
+    },
+    "SUCCESS": "Su solicitud se ha tramitado correctamente",
+    "NOT_IN_DB": "El elemento que usted busca no está en la base de datos",
+    "ERROR": "No se han podido obtener los datos",
+    "ACTIONS": {
+      "OK": "Ok"
+    }
+  },
+  "MODAL": {
+    "ACTIONS": {
+      "YES": "Sí",
+      "NO": "No",
+      "CANCEL": "Cancelar",
+      "ACCEPT": "Aceptar"
+    },
+    "TITLE": {
+      "INFORMATION": "Información",
+      "ACTION_SUCCESS": "Acción realizada con éxito",
+      "ACTION_FAILURE": "Algo ha salido mal"
+    },
+    "CONFIRM": {
+      "CREATE_REQUEST": "¿Seguro que quiere realizar esta acción?",
+      "REMOVE_REQUEST": "¿Seguro que quiere eliminar esta entrada?"
+    },
+    "MESSAGE": {
+      "SUCCESS": "Acción realizada con éxito",
+      "BACK_LIST": "A continuación se le redigirá a la página principal"
+    }
+  },
+  "VALIDATION": {
+    "REQUIRED": "Este campo es obligatorio",
+    "PATTERN": "Formato incorecto",
+    "RUT": "RUT no válido",
+    "RUT_FORMAT": "Separe el dígito de validación con un -",
+    "PATENT": "Patente no válido",
+    "EMAIL": "Formato incorrecto",
+    "TIME": "La hora de finalización debe ser mayor que la actual",
+    "TIME_START": "Debe ser menor que la hora de fin",
+    "TIME_END": "Debe ser mayor que la hora de inicio",
+    "END_DATE": "Debe ser mayor a la fecha de inicio",
+    "PASSWORD_SAME": "Las contraseñas deben coincidir",
+    "UNKNOWN": "Error desconocido"
+  },
+  "EXPIRE_SESSION": {
+    "TITLE": {
+      "NEAR": "Su sesión está a punto de expirar",
+      "DONE": "Su sesión ha caducado, vuelva a acceder con sus credenciales"
+    },
+    "TEXT": {
+      "NEAR": "Debido a la inactividad, su sesión va a caducar en 1 minuto. Si desea continuar su proceso dele a continuar.",
+      "DONE": "Debido a su inactividad, su sesión acaba de caducar. Si desea continuar en la plataforma dele a continuar para redireccionarle a la página principal."
+    },
+    "BUTTONS": {
+      "CONTINUE": "Continuar"
+    },
+    "TOOLTIPS": {
+      "CONTINUE": "Continuar"
+    }
+  }
+}

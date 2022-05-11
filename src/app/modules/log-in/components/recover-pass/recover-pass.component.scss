@@ -1,0 +1,18 @@
+@import './../../../../../assets/css/itcss/settings/settings';
+@import './../../../../../assets/css/itcss/generic/generic';
+@import './../../../../../assets/css/itcss/objects/partials/objects.form';
+
+.recover-button {
+  border: none;
+  background: transparent;
+  color: $main-title-color;
+  cursor: pointer;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.intra-main-body {
+  padding: 0px 30px 40px 30px;
+}

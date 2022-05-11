@@ -1,0 +1,172 @@
+@import '../../settings/settings';
+
+.intra-main-body {
+  background-color: white;
+  min-height: 300px;
+  padding: 70px 20px 20px 20px;
+
+  &__form {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    .mat-form-field ::ng-deep {
+      padding: 0 20px 20px 0;
+      .mat-icon-button {
+        height: 2rem;
+        width: 2rem;
+        svg {
+          width: 2rem;
+          color: $main-title-color;
+          padding-right: 2px;
+        }
+      }
+    }
+
+    .title-label {
+      color: $main-title-color;
+      margin: 10px 0;
+      font: 400 18px / 20px Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    .section-title {
+      position: absolute;
+      top: 0;
+      padding: 10px;
+      width: fit-content;
+      background: white;
+      color: $main-title-color;
+      font: 400 15px / 20px Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    .section-container {
+      position: relative;
+      min-height: 135px;
+      padding: 20px 20px 20px 0;
+      width: 100%;
+      .section-content {
+        border: 1px $section-color solid;
+        padding: 1.3rem;
+        &::after {
+          position: absolute;
+          top: 25px;
+          left: -15px;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    flex: 1 1 100%;
+    margin: 20px 0;
+    display: flex;
+    &__left {
+      flex: 1 1 50%;
+      display: flex;
+    }
+    &__right {
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.btn {
+  height: 40px;
+  min-width: 100px;
+  font-size: 13px;
+  margin: 0 10px;
+  border-radius: 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+
+  &.disable {
+    background-color: $disable-color;
+    border: 1px solid $disable-color;
+    pointer-events: none;
+  }
+}
+
+.btn-edit {
+  background-color: $main-title-color;
+  border: 1px solid $navbar-bg;
+  &:hover {
+    background-color: $navbar-bg;
+  }
+}
+
+.btn-save {
+  background-color: $orange-color;
+  border: 1px solid $orange-color-2;
+  &:hover {
+    background-color: $orange-color-2;
+  }
+}
+
+.btn-back {
+  background-color: $top-bar;
+  border: 1px solid $main-title-color;
+  &:hover {
+    background-color: $main-title-color;
+  }
+}
+
+.btn-discharge {
+  background-color: $orange-color3;
+  border: 1px solid $orange-color-3;
+  &:hover {
+    background-color: $orange-color-3;
+  }
+}
+
+.mat-form-field-appearance-legacy {
+  .mat-hint {
+    color: $color-red;
+  }
+}
+
+.filters {
+  width: 90%;
+  margin: auto;
+  position: relative;
+  background-color: transparent;
+  padding: 20px 10px 0;
+
+  flex: 1 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  .form-field ::ng-deep {
+    padding-right: 25px;
+    height: max-content;
+    line-height: 1.5rem;
+
+    .mat-form-field-infix,
+    input {
+      font-size: 13px;
+    }
+    .mat-icon-button {
+      height: 2rem;
+      width: 2rem;
+      svg {
+        width: 2rem;
+        color: $main-title-color;
+        padding-right: 2px;
+      }
+    }
+  }
+
+  &__buttons {
+    flex: 1 1 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    &__right {
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

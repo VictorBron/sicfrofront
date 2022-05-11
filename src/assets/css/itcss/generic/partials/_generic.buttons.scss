@@ -1,0 +1,17 @@
+@import '../../settings/settings';
+.intra-container {
+  width: 100%;
+  height: 100%;
+}
+.detail-button,
+.create-button {
+  background: $navbar-bg;
+  color: $navbar-color;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.detail-button:hover,
+.create-button:hover {
+  background-color: #000d52;
+}

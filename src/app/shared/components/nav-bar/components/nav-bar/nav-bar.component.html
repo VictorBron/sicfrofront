@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div fxFlex class="wrapper site-header__wrapper">
+    <div fxFlex class="start-options">
+      <a href="#" class="brand"
+        ><img alt="Qries" src="./../../../../../assets/images/logo_gray.png" width="150" height="70"
+      /></a>
+    </div>
+    <nav class="nav">
+      <ul class="nav__wrapper">
+        <li class="nav__item" *ngFor="let link of links">
+          <a [routerLink]="link.path" *ngIf="hasPermission(link)">{{ link.name | translate }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div fxFlex class="end-options">
+    <app-user-settings></app-user-settings>
+  </div>
+</header>

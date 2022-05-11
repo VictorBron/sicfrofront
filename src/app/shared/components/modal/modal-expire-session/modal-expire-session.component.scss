@@ -1,0 +1,42 @@
+@import './../../../../../assets/css/itcss/generic/generic';
+@import './../../../../../assets/css/itcss/objects/partials/objects.form';
+
+.mat-dialog-container {
+  max-width: 700px;
+  max-height: 820px;
+  box-shadow: none;
+}
+
+.intra-main-body {
+  padding: 0px 20px 20px 20px;
+
+  &__form {
+    flex-flow: column;
+
+    .title-label {
+      margin-top: 5px;
+      font: 400 25px/30px Roboto, 'Helvetica Neue', sans-serif;
+    }
+    .image {
+      text-align: center;
+      img {
+        width: 100px;
+        max-width: 100px;
+      }
+    }
+    .text {
+      margin-top: 15px;
+      font: 400 18px / 25px Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    .countdown {
+      text-align: center;
+      font: 500 30px / 130px Roboto, 'Helvetica Neue', sans-serif;
+      color: red;
+    }
+  }
+}
+
+.separator {
+  width: -webkit-fill-available;
+}

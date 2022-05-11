@@ -1,0 +1,48 @@
+<form [formGroup]="formGroup" autocomplete="off" class="intra-main-body__form">
+  <div fxFlex="100%" class="title-label">
+    {{ 'REQUEST_NEW.VEHICLE_CREATION.TITLES.CREATION_NEW_VEHICLE' | translate }}
+  </div>
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'VEHICLES.PATENT' | translate }}</mat-label>
+    <input
+      matInput
+      formControlName="patent"
+      placeholder="{{ 'VEHICLES.PATENT_PLACEHOLDER' | translate }}"
+      required
+    />
+    <mat-hint>{{ getTextByKey('patent') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="30%" class="form-field">
+    <mat-label>{{ 'VEHICLES.TYPE' | translate }}</mat-label>
+    <mat-select formControlName="type" required>
+      <mat-option *ngFor="let type of vehicleTypes" [value]="type">
+        {{ type.Name | translate }}
+      </mat-option>
+    </mat-select>
+    <mat-hint>{{ getTextByKey('type') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100%" class="form-field">
+    <mat-label>{{ 'VEHICLES.DESCRIPTION' | translate }}</mat-label>
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="{{ 'VEHICLES.DESCRIPTION_PLACEHOLDER' | translate }}"
+    ></textarea>
+    <mat-hint>{{ getTextByKey('description') | translate }}</mat-hint>
+  </mat-form-field>
+</form>
+
+<div class="intra-main-body__buttons">
+  <div class="intra-main-body__buttons__left">
+    <button class="btn btn-edit" mat-raised-button (click)="submitCancel()">
+      {{ 'REQUEST_NEW.VEHICLE_CREATION.BUTTONS.CANCEL' | translate }}
+    </button>
+  </div>
+  <div class="intra-main-body__buttons__right">
+    <button class="btn btn-discharge" mat-raised-button (click)="submitNewVehicle()">
+      {{ 'REQUEST_NEW.VEHICLE_CREATION.BUTTONS.CREATE_VEHICLE' | translate }}
+    </button>
+  </div>
+</div>

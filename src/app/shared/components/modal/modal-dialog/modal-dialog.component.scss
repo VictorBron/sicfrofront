@@ -1,0 +1,37 @@
+@import './../../../../../assets/css/itcss/generic/generic';
+@import './../../../../../assets/css/itcss/objects/partials/objects.form';
+
+.intra-main-body {
+  padding: 15px 15px 15px 15px;
+  min-height: initial;
+
+  &_form {
+    padding: 15px 15px 0px 15px;
+  }
+}
+
+.intra-container {
+  padding-bottom: 0px;
+}
+
+.section-container {
+  padding: 15px 15px 0px 0px;
+}
+
+// TODO: fix styles
+.mat-icon-placeholder {
+  width: 50px;
+
+  mat-icon {
+    font-size: 45px;
+  }
+
+  // TODO: how to import tooltips
+  &__green {
+    color: $color-green;
+  }
+
+  &__red {
+    color: $color-red;
+  }
+}

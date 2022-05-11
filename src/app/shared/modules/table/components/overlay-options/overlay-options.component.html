@@ -1,0 +1,36 @@
+<button
+  class="overlay-button"
+  (click)="open()"
+  type="button"
+  [style.pointer-events]="allOptionsDisabled ? 'none' : ''"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+>
+  {{ getText() }}
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  (detach)="isOpen = false"
+  (backdropClick)="isOpen = false"
+>
+  <ul class="options-list">
+    <li
+      class="option"
+      *ngFor="let option of options"
+      (click)="onOptionClicked(option, element)"
+      [style.display]="isDisabled(option, element) ? 'none' : ''"
+    >
+      <span class="option__icon">
+        <mat-icon *ngIf="option.icon" [style.color]="isDisabled(option, element) ? 'gray' : option.color">{{
+          option.icon
+        }}</mat-icon>
+      </span>
+      <div class="option__text">{{ option.text | translate }}</div>
+    </li>
+  </ul>
+</ng-template>

@@ -1,0 +1,137 @@
+<div class="intra-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <div class="login-content">
+    <div class="login-content__img">
+      <img alt="logo_fordward" src="./../../../../../assets/images/logo.png" width="150" height="70" />
+    </div>
+    <form *ngIf="showMain" [formGroup]="logInForm" class="login-form" fxLayout="column" fxLayoutAlign="center center">
+      <span class="login-title">{{ 'LOGIN.TITLES.LOGIN' | translate }}</span>
+      <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center" class="login-fields">
+        <div>
+          <mat-form-field class="form-field">
+            <mat-label>{{ 'LOGIN.USER' | translate }}</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="user"
+              placeholder="{{ 'LOGIN.USER' | translate }}"
+              (keyup.enter)="onLoginButtonClick()"
+              required
+            />
+            <mat-hint>{{ getTextByKey('user') | translate }}</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field class="form-field"
+            ><mat-label>{{ 'LOGIN.PASSWORD' | translate }}</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
+              (keyup.enter)="onLoginButtonClick()"
+              required
+            />
+            <mat-hint>{{ getTextByKey('password') | translate }}</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <button
+          class="login-button"
+          fxFlexOffset="10"
+          type="button"
+          color="primary"
+          (click)="onLoginButtonClick()"
+          matTooltip="{{ 'LOGIN.TOOLTIPS.LOGIN' | translate }}"
+          [disabled]="!logInForm.touched || !logInForm.valid"
+        >
+          {{ 'LOGIN.BUTTONS.LOGIN' | translate }}
+        </button>
+
+        <button
+          class="recover-button"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          type="button"
+          color="primary"
+          (click)="onRestorePassswordClick()"
+          matTooltip="{{ 'LOGIN.TOOLTIPS.RESTORE_PASSWORD' | translate }}"
+        >
+          {{ 'LOGIN.BUTTONS.RESTORE_PASSWORD' | translate }}
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="showEmailForm"
+      [formGroup]="recoverPassForm"
+      class="login-form"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <span class="login-title">{{ 'LOGIN.TITLES.SEND_EMAIL' | translate }}</span>
+      <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center" class="login-fields">
+        <div>
+          <mat-form-field class="form-field">
+            <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}"
+              required
+              (keyup.enter)="onRequestClick()"
+            />
+            <mat-hint>{{ getTextByKeyRecover('email') | translate }}</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div fxLayoutGap="30px" fxLayout="row" fxLayoutAlign="center center">
+          <button
+            class="recover-button"
+            fxLayout="row"
+            type="button"
+            color="primary"
+            (click)="onRestorePassswordClick()"
+            matTooltip="{{ 'LOGIN.TOOLTIPS.BACK' | translate }}"
+          >
+            {{ 'LOGIN.BUTTONS.BACK' | translate }}
+          </button>
+
+          <button
+            class="recover-button"
+            fxLayout="row"
+            type="button"
+            color="primary"
+            (click)="onRequestClick()"
+            matTooltip="{{ 'LOGIN.TOOLTIPS.REQUEST' | translate }}"
+          >
+            {{ 'LOGIN.BUTTONS.REQUEST' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div
+      *ngIf="!showMain && !showEmailForm && showEmailConfirmation"
+      class="login-form"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayoutGap="35px"
+    >
+      <span class="login-title">{{ 'LOGIN.TITLES.SENDED_EMAIL' | translate }}</span>
+      <button
+        class="recover-button"
+        fxLayout="row"
+        type="button"
+        color="primary"
+        (click)="onRestorePassswordClick()"
+        matTooltip="{{ 'LOGIN.TOOLTIPS.BACK' | translate }}"
+      >
+        {{ 'LOGIN.BUTTONS.BACK' | translate }}
+      </button>
+    </div>
+
+    <div *ngIf="showRecoverComponent">
+      <app-recover-pass [token]="token" (cancelClick)="onCancelClick()"> </app-recover-pass>
+    </div>
+  </div>
+</div>

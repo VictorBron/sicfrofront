@@ -1,0 +1,17 @@
+@import '../itcss/settings/settings';
+
+mat-icon {
+  cursor: pointer;
+  &.disable {
+    pointer-events: none;
+    color: $disable-color;
+  }
+
+  &.red {
+    color: $mat-icon-red;
+  }
+
+  &.green {
+    color: $mat-icon-green;
+  }
+}

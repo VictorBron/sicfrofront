@@ -1,0 +1,116 @@
+<div class="intra-container">
+  <div class="intra-main-title">
+    <div class="title-content">{{ title | translate }}</div>
+  </div>
+  <div class="intra-main-body">
+    <form [formGroup]="userForm" class="intra-main-body__form">
+      <mat-form-field fxFlex="33%" class="form-field">
+        <mat-label>{{ 'USERS.LOGIN' | translate }}</mat-label>
+        <input matInput type="text" formControlName="login" placeholder="{{ 'USERS.LOGIN' | translate }}" required />
+        <mat-hint>{{ getTextByKey('login') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33%" class="form-field">
+        <mat-label>{{ 'USERS.NAME' | translate }}</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="{{ 'USERS.NAME' | translate }}" required />
+        <mat-hint>{{ getTextByKey('name') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="34%" class="form-field">
+        <mat-label>{{ 'USERS.LAST_NAME' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="lastName"
+          placeholder="{{ 'USERS.LAST_NAME' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('lastName') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33%" class="form-field">
+        <mat-label>{{ 'USERS.RUT' | translate }}</mat-label>
+        <input matInput type="text" formControlName="rut" placeholder="{{ 'USERS.RUT' | translate }}" required />
+        <mat-hint>{{ getTextByKey('rut') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33%" class="form-field">
+        <mat-label>{{ 'USERS.PHONE' | translate }}</mat-label>
+        <input matInput type="text" formControlName="phone" placeholder="{{ 'USERS.PHONE' | translate }}" required />
+        <mat-hint>{{ getTextByKey('phone') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="34%" class="form-field">
+        <mat-label>{{ 'USERS.EMAIL' | translate }}</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="{{ 'USERS.EMAIL' | translate }}" required />
+        <mat-hint>{{ getTextByKey('email') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33%" class="element-form">
+        <mat-label>{{ 'USERS.CLIENT' | translate }}</mat-label>
+        <mat-select formControlName="client" (selectionChange)="setIsFroward()">
+          <mat-option *ngFor="let client of clients" [value]="client.IdClient" required>
+            {{ client.Name }}
+          </mat-option>
+        </mat-select>
+        <mat-hint>{{ getTextByKey('client') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="isFroward" fxFlex="33%" class="element-form">
+        <mat-label>{{ 'USERS.USER_PROFILE' | translate }}</mat-label>
+        <mat-select formControlName="userType">
+          <mat-option *ngFor="let type of userTypes" [value]="type.Permission">
+            {{ type.Type }}
+          </mat-option>
+        </mat-select>
+        <mat-hint>{{ getTextByKey('userType') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33%" class="element-form">
+        <mat-label>{{ 'USERS.STATE' | translate }}</mat-label>
+        <mat-select formControlName="state" required>
+          <mat-option *ngFor="let state of states" [value]="state.IdState">
+            {{ state.State }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <div class="intra-main-body__buttons">
+      <div class="intra-main-body__buttons__left">
+        <button class="btn btn-back" (click)="onGoBackButtonClick()" matTooltip="{{ 'TOOLTIPS.BACK' | translate }}">
+          {{ 'USERS.BUTTONS.GO_BACK' | translate }}
+        </button>
+      </div>
+      <div class="intra-main-body__buttons__right">
+        <button
+          *ngIf="formMode !== formTypes.CREATE_FORM"
+          class="btn btn-discharge"
+          (click)="onRemoveButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.REMOVE' | translate }}"
+        >
+          {{ 'USERS.BUTTONS.REMOVE' | translate }}
+        </button>
+
+        <button
+          *ngIf="formMode !== formTypes.DETAIL_FORM"
+          class="btn btn-save"
+          (click)="onSaveButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.SAVE' | translate }}"
+          [disabled]="!userForm.valid && userForm.errors"
+        >
+          {{ 'USERS.BUTTONS.SAVE_USER' | translate }}
+        </button>
+
+        <button
+          *ngIf="formMode === formTypes.DETAIL_FORM"
+          class="btn btn-edit"
+          (click)="onEditButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.EDIT' | translate }}"
+        >
+          {{ 'USERS.BUTTONS.EDIT_USER' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

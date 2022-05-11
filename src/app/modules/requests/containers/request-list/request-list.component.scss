@@ -1,0 +1,21 @@
+@import './../../../../../assets/css/itcss/objects/partials/objects.table';
+@import './../../../../../assets/css/itcss/generic/generic';
+@import './../../../../../assets/css/mat-icon/mat-icon-style.scss';
+@import './../../../../../assets/css/itcss/forms/form-elements.style.scss';
+
+$overlay-color: #888;
+
+.overlay-button {
+  border: none;
+  background: transparent;
+  color: $overlay-color;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+}
+
+.table-container {
+  width: 100%;
+}

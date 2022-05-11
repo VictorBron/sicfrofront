@@ -1,0 +1,63 @@
+<form [formGroup]="formGroupFilter" autocomplete="off" class="filters">
+  <mat-form-field fxFlex="25%" class="form-field">
+    <mat-label>{{ 'REQUEST_LIST.FILTER.VALIDITY_START' | translate }}</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker1"
+      formControlName="validityStart"
+      placeholder="{{ 'REQUEST_LIST.FILTER.VALIDITY_START_PLACEHOLDER' | translate }}"
+      (dateChange)="dateChange($event.value)"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+    <mat-hint>{{ getTextByKey('validityStart') | translate }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="25%" class="form-field">
+    <mat-label>{{ 'REQUEST_LIST.FILTER.VALIDITY_END' | translate }}</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker2"
+      formControlName="validityEnd"
+      placeholder="{{ 'REQUEST_LIST.FILTER.VALIDITY_END_PLACEHOLDER' | translate }}"
+      [min]="minDate"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="25%" class="form-field">
+    <mat-label>{{ 'REQUEST_LIST.FILTER.PATENT' | translate }}</mat-label>
+    <input matInput formControlName="patent" placeholder="{{ 'REQUEST_LIST.FILTER.PATENT_PLACEHOLDER' | translate }}" />
+  </mat-form-field>
+
+  <mat-form-field fxFlex="25%" class="form-field">
+    <mat-label>{{ 'REQUEST_LIST.FILTER.REQUEST_STATE' | translate }}</mat-label>
+    <mat-select formControlName="requestState">
+      <mat-option *ngFor="let state of requestStates" [value]="state.id">
+        {{ state.text | translate }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    fxFlex="25%"
+    class="form-field"
+    [ngClass]="canFilterByClient ? '' : 'hidden'"
+  >
+    <mat-label>{{ 'REQUEST_LIST.FILTER.CLIENT' | translate }}</mat-label>
+    <mat-select formControlName="client">
+      <mat-option *ngFor="let client of clients" [value]="client">
+        {{ client.Name | translate }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="filters__buttons">
+    <div class="filters__buttons__right">
+      <button class="btn btn-save btn-submit" mat-raised-button (click)="onSearch()">
+        {{ 'REQUEST_LIST.FILTER.SEARCH' | translate }}
+      </button>
+    </div>
+  </div>
+</form>

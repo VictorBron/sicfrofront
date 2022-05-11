@@ -1,0 +1,63 @@
+@import './../../../../../assets/css/itcss/settings/settings';
+@import './../../../../../assets/css/itcss/generic/generic';
+@import './../../../../../assets/css/itcss/objects/partials/objects.form';
+
+.login-content {
+  width: 530px;
+  height: 450px;
+  background: white;
+  border-radius: 2%;
+  margin: 170px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  &__img {
+    width: max-content;
+    margin: auto;
+    img {
+      margin: 20px;
+    }
+  }
+
+  .login-title {
+    width: 100%;
+    text-align: center;
+    margin: 5px 5px;
+    font-size: 20px;
+    color: $main-title-color;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .login-button {
+    color: $navbar-color;
+    background: $navbar-bg;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    width: 80%;
+    color: white;
+    height: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+    &:disabled {
+      background: gray;
+      cursor: default;
+    }
+  }
+
+  .recover-button {
+    border: none;
+    background: transparent;
+    color: $main-title-color;
+    cursor: pointer;
+  }
+}
+
+.form-field {
+  margin-bottom: 20px;
+  width: 100%;
+}

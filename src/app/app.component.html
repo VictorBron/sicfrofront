@@ -1,0 +1,9 @@
+<app-notification> </app-notification>
+<app-expire-session></app-expire-session>
+<div class="content-fordward" [ngClass]="!showNavBar ? 'login-background' : ''">
+  <app-nav-bar *ngIf="showNavBar"></app-nav-bar>
+  <app-general-loading></app-general-loading>
+  <div class="content-fordward__container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

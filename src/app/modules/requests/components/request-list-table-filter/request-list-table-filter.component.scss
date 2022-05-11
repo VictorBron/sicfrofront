@@ -1,0 +1,11 @@
+@import '../../../../../assets/css/itcss/generic/generic';
+@import '../../../../../assets/css/itcss/objects/partials/objects.form';
+
+:host {
+  flex: 1 1 100%;
+
+  .filters {
+    width: 100%;
+    min-height: 140px;
+  }
+}

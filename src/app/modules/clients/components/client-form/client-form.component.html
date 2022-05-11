@@ -1,0 +1,111 @@
+<div class="intra-container">
+  <div class="intra-main-title">
+    <div class="title-content">{{ title | translate }}</div>
+  </div>
+  <div class="intra-main-body">
+    <form [formGroup]="clientForm" class="intra-main-body__form">
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'CLIENTS.RUT' | translate }}</mat-label>
+        <input matInput type="text" formControlName="RUT" placeholder="{{ 'CLIENTS.RUT' | translate }}" required />
+        <mat-hint>{{ getTextByKey('RUT') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'CLIENTS.OT' | translate }}</mat-label>
+        <input matInput type="text" formControlName="OT" placeholder="{{ 'CLIENTS.OT' | translate }}" required />
+        <mat-hint>{{ getTextByKey('OT') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="40%" class="form-field">
+        <mat-label>{{ 'CLIENTS.NAME' | translate }}</mat-label>
+        <input matInput type="text" formControlName="Name" placeholder="{{ 'CLIENTS.NAME' | translate }}" required />
+        <mat-hint>{{ getTextByKey('Name') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'CLIENTS.GIRO' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="Giro"
+          placeholder="{{ 'CLIENTS.GIRO' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('Giro') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="40%" class="form-field">
+        <mat-label>{{ 'CLIENTS.DIRECTION' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="Direction"
+          placeholder="{{ 'CLIENTS.DIRECTION' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('Direction') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'CLIENTS.CITY' | translate }}</mat-label>
+        <input matInput type="text" formControlName="City" placeholder="{{ 'CLIENTS.CITY' | translate }}" required />
+        <mat-hint>{{ getTextByKey('City') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'CLIENTS.TELEPHONE' | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="Telephone"
+          placeholder="{{ 'CLIENTS.TELEPHONE' | translate }}"
+          required
+        />
+        <mat-hint>{{ getTextByKey('Telephone') | translate }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="20%" class="form-field">
+        <mat-label>{{ 'CLIENTS.EMAIL' | translate }}</mat-label>
+        <input matInput type="text" formControlName="Email" placeholder="{{ 'CLIENTS.EMAIL' | translate }}" required />
+        <mat-hint>{{ getTextByKey('Email') | translate }}</mat-hint>
+      </mat-form-field>
+    </form>
+
+    <div class="intra-main-body__buttons">
+      <div class="intra-main-body__buttons__left">
+        <button class="btn btn-back" (click)="onGoBackButtonClick()" matTooltip="{{ 'TOOLTIPS.BACK' | translate }}">
+          {{ 'CLIENTS.BUTTONS.GO_BACK' | translate }}
+        </button>
+      </div>
+      <div class="intra-main-body__buttons__right">
+        <button
+          *ngIf="formMode !== formTypes.CREATE_FORM"
+          class="btn btn-discharge"
+          (click)="onRemoveButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.REMOVE' | translate }}"
+        >
+          {{ 'CLIENTS.BUTTONS.REMOVE' | translate }}
+        </button>
+
+        <button
+          *ngIf="formMode !== formTypes.DETAIL_FORM"
+          class="btn btn-save"
+          (click)="onSaveButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.SAVE' | translate }}"
+          [disabled]="!clientForm.valid && clientForm.errors"
+        >
+          {{ 'CLIENTS.BUTTONS.SAVE_CLIENT' | translate }}
+        </button>
+
+        <button
+          *ngIf="formMode === formTypes.DETAIL_FORM"
+          class="btn btn-edit"
+          (click)="onEditButtonClick()"
+          matTooltip="{{ 'TOOLTIPS.EDIT' | translate }}"
+        >
+          {{ 'CLIENTS.BUTTONS.EDIT_CLIENT' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

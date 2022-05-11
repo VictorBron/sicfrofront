@@ -1,0 +1,36 @@
+<div class="content-table mat-elevation-z8">
+  <table mat-table [dataSource]="dataSourceFiltered" matSort (matSortChange)="sortData($event)">
+    <ng-container [matColumnDef]="OPTIONS_ID" *ngIf="options?.length">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <app-overlay-options [element]="element" [options]="options"></app-overlay-options>
+      </td>
+    </ng-container>
+
+    <ng-container [matColumnDef]="column.id" *ngFor="let column of columnsDef">
+      <th [mat-sort-header]="column.id" mat-header-cell *matHeaderCellDef>
+        {{ column.header | translate }}
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [style.max-width]="column.maxWidth ?? ''"
+        [style.min-width]="column.minWidth ?? ''"
+      >
+        {{ element[column.id] }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+<mat-paginator
+  #paginator
+  [length]="length"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageIndex]="pageIndex"
+  (page)="pageEvent($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

@@ -1,0 +1,72 @@
+@import '../../../../../../assets/css/itcss/settings/settings';
+
+$overlay-color: #888;
+$border-color: #ccc;
+$border-bottom: #8b8b8b;
+$hover-color: #006ab3;
+
+.overlay-button {
+  border: none;
+  background: transparent;
+  color: $overlay-color;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+}
+
+.options-list {
+  width: 140px;
+  border: $border-color solid 1px;
+  border-radius: 5px;
+  background: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  & .option {
+    list-style-type: none;
+    border-bottom: solid 1px $border-bottom;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    height: 22px;
+    color: $hover-color;
+
+    &__icon {
+      padding: 0 10px;
+    }
+
+    &__text {
+      padding: 0 10px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      background: $hover-color;
+      color: white;
+    }
+
+    &.disable {
+      color: $disable-color;
+      background: initial;
+      &:hover {
+        background: initial;
+        pointer-events: none;
+      }
+
+      mat-icon {
+        color: $disable-color;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

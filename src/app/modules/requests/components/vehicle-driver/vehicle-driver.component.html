@@ -1,0 +1,138 @@
+<div fxLayout="row wrap">
+  <form
+    [formGroup]="formGroup"
+    autocomplete="off"
+    (keydown.enter)="$event.preventDefault()"
+    fxFlex="100%"
+    class="intra-main-body__form"
+  >
+    <!-- Driver -->
+    <div fxFlex="100%" class="section-container">
+      <div class="section-content" fxLayout="row wrap">
+        <div class="section-title">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART2.SECTION_DRIVER' | translate }}</div>
+
+        <mat-form-field fxFlex="30%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.DRIVER_CREATION.FORM.SEARCH_RUT' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="valueSearchDriver"
+            placeholder="{{ 'REQUEST_NEW.DRIVER_CREATION.FORM.SEARCH_RUT_PLACEHOLDER' | translate }}"
+            (keyup.enter)="searchDriver()"
+          />
+          <mat-icon
+            class="mat-icon"
+            matTooltip="{{ 'TOOLTIPS.SEARCH' | translate }}"
+            (click)="searchDriver()"
+            matSuffix
+            [ngClass]="disabled ? 'disable' : ''"
+            >{{ TOOLTIPS.SEARCH }}</mat-icon
+          >
+          <mat-hint>{{ getTextByKey('valueSearchDriver') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="30%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.DRIVER_CREATION.FORM.SELECT_DRIVER_PLACEHOLDER' | translate }}</mat-label>
+          <mat-select formControlName="selectDriver" #matSelectDriver>
+            <mat-option
+              *ngFor="let driver of listDriver"
+              [value]="driver.IdDriver"
+              (onSelectionChange)="onSelectionChangeDriver(driver, $event)"
+            >
+              {{ driver.RUT }} - {{ driver.LastName }}, {{ driver.Name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div fxFlex="30%" class="form-field">
+          <button
+            class="btn btn-back"
+            mat-raised-button
+            [ngClass]="disabled ? 'disable' : ''"
+            (click)="statusCreationDriver(true)"
+          >
+            {{ 'REQUEST_NEW.DRIVER_CREATION.BUTTONS.CREATE_DRIVER_NEW' | translate }}
+          </button>
+        </div>
+
+        <div fxFlex="100%" *ngIf="showCreateDriver">
+          <app-driver-data
+            (newDriver)="newCallbackDriver($event)"
+            (cancel)="statusCreationDriver(false)"
+          ></app-driver-data>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vehicle -->
+    <div fxFlex="100%" class="section-container">
+      <div class="section-content" fxLayout="row wrap">
+        <div class="section-title">{{ 'REQUEST_NEW.REQUEST_BASIC_DATA.TITLES.PART2.SECTION_VEHICLE' | translate }}</div>
+
+        <mat-form-field fxFlex="30%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.VEHICLE_CREATION.FORM.SEARCH_PATENT' | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="valueSearchVehicle"
+            placeholder="{{ 'REQUEST_NEW.VEHICLE_CREATION.FORM.SEARCH_PATENT_PLACEHOLDER' | translate }}"
+            (keyup.enter)="searchVehicle()"
+          />
+          <mat-icon
+            matTooltip="{{ 'TOOLTIPS.SEARCH' | translate }}"
+            (click)="searchVehicle()"
+            matSuffix
+            [ngClass]="disabled ? 'disable' : ''"
+            >{{ TOOLTIPS.SEARCH }}</mat-icon
+          >
+          <mat-hint>{{ getTextByKey('valueSearchVehicle') | translate }}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="30%" class="form-field">
+          <mat-label>{{ 'REQUEST_NEW.VEHICLE_CREATION.FORM.SELECT_VEHICLE_PLACEHOLDER' | translate }}</mat-label>
+          <mat-select formControlName="selectVehicle"  #matSelectVehicle>
+            <mat-option
+              *ngFor="let vehicle of listVehicle"
+              [value]="vehicle.IdVehicle"
+              (onSelectionChange)="onSelectionChangeVehicle(vehicle, $event)"
+            >
+              {{ vehicle.Patent }} - {{ vehicle.VehicleType.Name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div fxFlex="30%" class="form-field">
+          <button
+            class="btn btn-back"
+            mat-raised-button
+            [ngClass]="disabled ? 'disable' : ''"
+            (click)="statusCreationVehicle(true)"
+          >
+            {{ 'REQUEST_NEW.DRIVER_CREATION.BUTTONS.CREATE_DRIVER_NEW' | translate }}
+          </button>
+        </div>
+
+        <div fxFlex="100%" *ngIf="showCreateVehicle">
+          <app-vehicle-data
+            (newVehicle)="newCallbackVehicle($event)"
+            (cancel)="statusCreationVehicle(false)"
+          ></app-vehicle-data>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="intra-main-body__buttons">
+    <div class="intra-main-body__buttons__right">
+      <button class="btn btn-save" mat-raised-button [ngClass]="disabled ? 'disable' : ''" (click)="addDriverVehicle()">
+        {{ 'REQUEST_NEW.REQUEST_BASIC_DATA.BUTTONS.ASOCIATE' | translate }}
+      </button>
+    </div>
+  </div>
+  <div fxFlex="100%">
+    <app-table-relations
+      [edit]="edit"
+      [disabled]="disabled"
+      [asociations$]="tableData$"
+      (removeId)="removeDriverVehicle($event)"
+      (status)="statusDriverVehicle($event)"
+    >
+    </app-table-relations>
+  </div>
+</div>

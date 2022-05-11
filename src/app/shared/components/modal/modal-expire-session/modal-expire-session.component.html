@@ -1,0 +1,33 @@
+<div class="mat-dialog-container" fxLayout="column">
+    <div class="intra-main-body__form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <h1 class="title-label">{{ title | translate }}</h1>
+      <hr class="separator" />
+
+      <div class="image" fxLayoutAlign="center center">
+        <img class="image__img" alt="time_expires" src="./../../../../../assets/images/time_expires.png" />
+      </div>
+
+      <div class="text">
+        {{ text | translate }}
+      </div>
+
+      <div class="countdown"><countdown #cd [config]="config" (event)="timeHandler($event)"></countdown>s</div>
+    </div>
+
+    <hr class="separator" />
+
+    <div class="intra-main-body__buttons">
+      <div class="intra-main-body__buttons__right">
+        <div mat-dialog-actions>
+          <button
+            mat-raised-button
+            class="btn btn-save btn-submit"
+            (click)="onContinueClick()"
+            matTooltip="{{ 'EXPIRE_SESSION.TOOLTIPS.CONTINUE' | translate }}"
+          >
+            {{ 'EXPIRE_SESSION.BUTTONS.CONTINUE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
